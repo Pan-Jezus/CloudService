@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=npm init -y, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudService — Облачная SaaS платформа</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page">
+  
+  <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#" class="nav__link">Возможности</a></li>
+        <li class="nav__item"><a href="#pricing" class="nav__link">Тарифы</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="main" itemscope itemtype="https://schema.org/SoftwareApplication">
     
+    <meta itemprop="applicationCategory" content="BusinessApplication">
+    <meta itemprop="operatingSystem" content="Web, Windows, macOS">
+
+    <section class="hero">
+      <h1 class="hero__title" itemprop="name">CloudService - Ваше бизнес-облако</h1>
+      <p class="hero__desc" itemprop="description">Надежное хранение данных и мощная аналитика в одном интерфейсе.</p>
+      <img src="images/hero.png" alt="Интерфейс дашборда облачной платформы CloudService" class="hero__image">
+    </section>
+
+    <div class="content-wrapper">
+      <article class="features">
+        <h2 class="features__title">Ключевые преимущества</h2>
+        
+        <figure class="feature-card">
+          <img src="images/feature1.jpg" alt="Иконка щита, символизирующая безопасность данных" class="feature-card__img">
+          <figcaption class="feature-card__caption">
+            <h3>Военный стандарт шифрования</h3>
+            <p>Ваши файлы защищены алгоритмом AES-256.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="feature-card">
+          <img src="images/feature2.png" alt="Графики роста и аналитики" class="feature-card__img">
+          <figcaption class="feature-card__caption">
+            <h3>Продвинутая аналитика</h3>
+            <p>Встроенные инструменты для анализа больших данных.</p>
+          </figcaption>
+        </figure>
+      </article>
+
+      <aside class="sidebar">
+        <h3>Новости платформы</h3>
+        <p>Обновление v2.4: добавлена интеграция с популярными CRM-системами.</p>
+        <time datetime="2023-10-25">25 октября 2023</time>
+      </aside>
+    </div>
+
+    <section id="pricing" class="pricing">
+      <h2 class="pricing__title">Тарифные планы</h2>
+      
+      <div class="pricing__plan" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <h3 itemprop="name">Pro Business</h3>
+        <p class="pricing__cost">
+          <span itemprop="price" content="2990">2990</span> 
+          <span itemprop="priceCurrency" content="RUB">₽</span> / месяц
+        </p>
+        <meta itemprop="availability" content="https://schema.org/InStock">
+        <button class="pricing__btn">Подключить</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">&copy; 2023 CloudService. Все права защищены.</p>
+  </footer>
+
 </body>
 </html>
