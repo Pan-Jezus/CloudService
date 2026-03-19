@@ -1,0 +1,16 @@
+:root {
+  /* Цветовая палитра CloudService */
+  --color-primary: #0056b3;
+  --color-secondary: #00a8ff;
+  --color-dark: #333333;
+  --color-light: #f8f9fa;
+  --color-white: #ffffff;
+
+  /* Типографика */
+  --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Отступы */
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+}
