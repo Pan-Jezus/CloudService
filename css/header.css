@@ -1,4 +1,4 @@
-/* --- Стили шапки CloudService с картинкой логотипа (Mobile First) --- */
+/* --- Стили шапки CloudService (Бургер-меню) --- */
 
 .header {
   background-color: var(--color-white);
@@ -8,47 +8,70 @@
   top: 0;
   z-index: 50;
   
-  /* Включаем Flexbox для всей шапки */
   display: flex;
-  
-  /* Mobile default: логотип сверху, меню снизу (в столбик) */
-  flex-direction: column; 
-  align-items: center; /* Центрируем всё на мобильных */
-  gap: var(--spacing-sm); /* Отступ между лого и меню */
+  flex-wrap: wrap; /* Разрешаем элементам падать на новую строку */
+  justify-content: space-between; /* Логотип слева, бургер справа */
+  align-items: center;
 }
 
-/* Стили ссылки-логотипа */
-.header__logo-link {
-  text-decoration: none;
-}
+/* Стили логотипа */
+.header__logo-link { text-decoration: none; }
 
-/* NEW: Внутренний Flexbox контейнер: держит картинку и текст в одну строку */
 .header__logo-container {
   display: flex;
-  align-items: center; /* Выравнивает картинку и текст строго по центру высоты */
-  gap: var(--spacing-sm); /* Отступ между значком и текстом */
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
-/* NEW: Стили самой картинки логотипа */
 .header__logo-img {
-  height: 35px; /* Задать картинке фиксированную высоту, чтобы она не была огромной */
-  width: auto; /* Ширина подстроится автоматически, чтобы не искажать пропорции */
-  object-fit: contain; /* Картинка аккуратно впишется в эти размеры */
+  height: 35px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* Стили синего текста логотипа */
 .header__logo-text {
   color: var(--color-primary);
   font-weight: bold;
-  font-size: 1.4rem; /* Немного уменьшил размер, чтобы с иконкой смотрелось лучше */
+  font-size: 1.4rem;
   letter-spacing: -0.5px;
 }
 
-/* Стили меню (Mobile default) */
+/* --- БУРГЕР-МЕНЮ (Mobile) --- */
+
+/* Прячем сам системный квадратик чекбокса */
+.burger-checkbox {
+  display: none;
+}
+
+/* Рисуем иконку из 3 полосок */
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+/* Изначально прячем меню на мобильных */
+.nav {
+  width: 100%;
+  display: none; 
+  margin-top: var(--spacing-md);
+}
+
 .nav__list {
   list-style: none;
   display: flex;
-  flex-direction: column; /* Меню в столбик на мобильных */
+  flex-direction: column;
   gap: var(--spacing-sm);
   text-align: center;
 }
@@ -59,25 +82,39 @@
   font-weight: bold;
   padding: var(--spacing-sm);
   display: block;
+  background-color: var(--color-light); /* Легкий фон для кнопок */
+  border-radius: 4px;
 }
 
-.nav__link:hover {
-  color: var(--color-primary);
+/* МАГИЯ: если скрытый чекбокс нажат (checked), то показываем блок .nav */
+.burger-checkbox:checked ~ .nav {
+  display: block;
 }
 
-/* --- ДЕСКТОПНАЯ ВЕРСИЯ (от 768px и выше) --- */
+
+/* --- ДЕСКТОПНАЯ ВЕРСИЯ (от 768px) --- */
 @media (min-width: 768px) {
   .header {
-    /* На ПК: Логотип (с картинкой) влево, меню вправо */
-    flex-direction: row; 
-    justify-content: space-between; 
-    align-items: center; /* Выравниваем их по центру высоты шапки */
-    padding: var(--spacing-md) var(--spacing-lg); /* Больше отступа по бокам */
+    flex-wrap: nowrap; /* Запрещаем перенос строк на ПК */
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .burger-icon {
+    display: none; /* Прячем кнопку бургера на ПК */
+  }
+
+  .nav {
+    display: block; /* На ПК меню видно всегда */
+    width: auto;
+    margin-top: 0;
   }
 
   .nav__list {
-    flex-direction: row; /* Меню горизонтальное */
-    justify-content: flex-end;
+    flex-direction: row; /* Горизонтальное меню */
     gap: var(--spacing-md);
+  }
+
+  .nav__link {
+    background-color: transparent; /* Убираем фон кнопок на ПК */
   }
 }
