@@ -189,3 +189,41 @@
   margin-top: 4px;
   display: block;
 }
+
+/* --- Стили для Лабы 6 (API и Оптимистичные обновления) --- */
+
+.dashboard { 
+  margin-top: var(--spacing-lg); 
+  text-align: center;
+}
+
+.projects-grid { 
+  display: grid; 
+  gap: var(--spacing-md); 
+  margin-top: var(--spacing-md); 
+  text-align: left;
+}
+
+.project-card { 
+  background: var(--color-white); 
+  padding: var(--spacing-md); 
+  border-left: 4px solid var(--color-primary); 
+  border-radius: 4px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  transition: all 0.3s ease;
+}
+
+/* Эффект прозрачности для "Оптимистичного обновления" (пока ждем ответа сервера) */
+.project-card.optimistic { 
+  opacity: 0.5; 
+  border-left-color: orange; 
+}
+
+/* Стили для всплывающей ошибки (Обработка конфликтов) */
+.error-toast { 
+  background: #ff4444; 
+  color: white; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border-radius: 4px; 
+}

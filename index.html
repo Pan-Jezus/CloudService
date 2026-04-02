@@ -130,7 +130,22 @@
       </form>
     </section>
 
+<section id="dashboard" class="dashboard">
+      <h2 class="dashboard__title">Управление проектами (Синхронизация API)</h2>
+      
+      <div id="sync-error" class="error-toast" style="display: none;"></div>
+      
+      <form id="add-project-form" class="form" style="margin-bottom: 20px;">
+        <input type="text" id="project-title" class="form__input" placeholder="Название нового проекта" required>
+        <button type="submit" class="pricing__btn" style="margin-top: 10px;">Добавить проект</button>
+      </form>
+      
+      <div id="projects-container" class="projects-grid">
+        </div>
+    </section>
+
   </main>
+
 
   <footer class="footer">
     <p class="footer__copy">&copy; 2024 Cloud Service. Все права защищены.</p>
