@@ -86,7 +86,7 @@
   border-radius: 4px;
 }
 
-/* МАГИЯ: если скрытый чекбокс нажат (checked), то показываем блок .nav */
+/* если скрытый чекбокс нажат (checked), то показываем блок .nav */
 .burger-checkbox:checked ~ .nav {
   display: block;
 }

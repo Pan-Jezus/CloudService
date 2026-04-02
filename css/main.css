@@ -100,3 +100,92 @@
     font-size: 3rem;
   }
 }
+
+/* --- Стили для Лабы 5 (Статистика, Форма, Переключатель) --- */
+
+/* Статистика */
+.stats { margin-top: var(--spacing-lg); }
+.stats__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  background: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.stat-card { text-align: center; }
+.stat-card__number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+.stat-card__suffix {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* Переключатель тарифов */
+.pricing__toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: var(--spacing-md);
+}
+.toggle-label { font-weight: bold; color: var(--color-dark); transition: color 0.3s; }
+.toggle-label.active { color: var(--color-primary); }
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+.toggle-switch input:checked + .slider { background-color: var(--color-primary); }
+.toggle-switch input:checked + .slider:before { transform: translateX(26px); }
+
+/* Форма */
+.contact { margin-top: var(--spacing-lg); text-align: center; }
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.form__input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-main);
+}
+.form__input.error { border-color: red; }
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: 4px;
+  display: block;
+}

@@ -37,7 +37,6 @@
   </header>
 
   <main id="main" class="main" itemscope itemtype="https://schema.org/SoftwareApplication">
-    
     <meta itemprop="applicationCategory" content="BusinessApplication">
     <meta itemprop="operatingSystem" content="Web, Windows, macOS">
 
@@ -48,10 +47,26 @@
       <button class="pricing__btn">Get Started</button>
     </section>
 
+    <section class="stats" id="stats">
+      <div class="stats__grid">
+        <div class="stat-card">
+          <span class="stat-card__number" data-target="99">0</span><span class="stat-card__suffix">%</span>
+          <p>Аптайм серверов</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number" data-target="150">0</span><span class="stat-card__suffix">+</span>
+          <p>Терабайт данных</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number" data-target="5000">0</span><span class="stat-card__suffix">+</span>
+          <p>Пользователей</p>
+        </div>
+      </div>
+    </section>
+
     <div class="content-wrapper">
       <article class="features">
         <h2 class="features__title">Ключевые преимущества</h2>
-        
         <figure class="feature-card">
           <img src="images/feature1.png" alt="Иконка безопасности" class="feature-card__img">
           <figcaption class="feature-card__caption">
@@ -59,7 +74,6 @@
             <p>Ваши файлы защищены алгоритмом AES-256.</p>
           </figcaption>
         </figure>
-
         <figure class="feature-card">
           <img src="images/feature2.png" alt="Графики аналитики" class="feature-card__img">
           <figcaption class="feature-card__caption">
@@ -79,15 +93,41 @@
     <section id="pricing" class="pricing">
       <h2 class="pricing__title">Тарифные планы</h2>
       
+      <div class="pricing__toggle-wrapper">
+        <span class="toggle-label active" id="label-month">Месяц</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pricing-toggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label" id="label-year">Год (-20%)</span>
+      </div>
+
       <div class="pricing__plan" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
         <h3 itemprop="name">Pro Business</h3>
         <p class="pricing__cost">
-          <span itemprop="price" content="2990">2990</span> 
-          <span itemprop="priceCurrency" content="RUB">₽</span> / месяц
+          <span itemprop="price" id="price-value" content="2990">2990</span> 
+          <span itemprop="priceCurrency" content="RUB">₽</span>
         </p>
+        <p class="pricing__period" id="price-period">/ месяц</p>
         <meta itemprop="availability" content="https://schema.org/InStock">
         <button class="pricing__btn">Подключить</button>
       </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="contact__title">Свяжитесь с нами</h2>
+      <form id="contact-form" class="form" novalidate>
+        <div class="form__group">
+          <input type="text" id="name" class="form__input" placeholder="Ваше имя">
+        </div>
+        <div class="form__group">
+          <input type="email" id="email" class="form__input" placeholder="Ваш Email">
+        </div>
+        <div class="form__group">
+          <textarea id="message" class="form__input" rows="4" placeholder="Ваше сообщение"></textarea>
+        </div>
+        <button type="submit" class="pricing__btn">Отправить заявку</button>
+      </form>
     </section>
 
   </main>
@@ -96,5 +136,6 @@
     <p class="footer__copy">&copy; 2024 Cloud Service. Все права защищены.</p>
   </footer>
 
+  <script type="module" src="js/script.js"></script>
 </body>
 </html>
